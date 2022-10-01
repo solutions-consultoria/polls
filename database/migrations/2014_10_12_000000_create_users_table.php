@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('cpf')->unique();
             $table->string('login_token');
             $table->unsignedBigInteger('role')->nullable();
-            $table->string('phoneNumber')->nullable();
+            $table->string('phone_number')->nullable();
             $table->timestamps();
         });
 

@@ -15,14 +15,14 @@ class CreateUserAnswersTable extends Migration
     {
         Schema::create('users_answers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('question_id')->nullable();
+            $table->unsignedBigInteger('poll_id')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
 
 
         });
 
         Schema::table('users_answers', function($table) {
-            $table->foreign('question_id')->references('id')->on('questions');
+            $table->foreign('poll_id')->references('id')->on('polls');
             $table->foreign('user_id')->references('id')->on('users');
         });
 

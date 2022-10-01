@@ -22,7 +22,7 @@ class AuthController extends Controller
 
     public function logoff (Request $request)
     {
-       return 'deslogou';
+        return $this->authService->logoff($request);
     }
 
 }

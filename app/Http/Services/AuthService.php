@@ -9,11 +9,11 @@ use Session;
 
 class AuthService {
 
-    private $usermodel;
+    private $userModel;
 
-    public function __construct(User $usermodel)
+    public function __construct(User $userModel)
     {
-        $this->usermodel = $usermodel;
+        $this->userModel = $userModel;
     }
 
     public function login (Request $request)
@@ -24,7 +24,7 @@ class AuthService {
        }
        
        //Searching for ADM user
-       $user = $this->usermodel->where('cpf', $request->cpf)->where('login_token', $request->login_token)->where('role', 99)->first();
+       $user = $this->userModel->where('cpf', $request->cpf)->where('login_token', $request->login_token)->where('role', 99)->first();
 
        if (!$user) {
         flash('Não existe um admin com essas credenciais');
@@ -34,5 +34,11 @@ class AuthService {
        session(['user' => $user, 'isLogado' => true]);
 
        return redirect()->route('admin.home');
+    }
+
+    public function logoff (Request $request)
+    {
+        $request->session()->flush();
+        return redirect()->route('/');
     }
 }

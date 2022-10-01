@@ -16,12 +16,12 @@ class CreateAnswersTable extends Migration
         Schema::create('answers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->unsignedBigInteger('question_id')->nullable();;
+            $table->unsignedBigInteger('poll_id')->nullable();;
 
         });
 
         Schema::table('answers', function($table) {
-            $table->foreign('question_id')->references('id')->on('questions');
+            $table->foreign('poll_id')->references('id')->on('polls');
         });
     }
 
