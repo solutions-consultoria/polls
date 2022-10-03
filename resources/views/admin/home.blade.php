@@ -12,13 +12,13 @@
             <h5 class="card-header text-center" style="background-color: #937DC2;color: #f8fafc">Enquetes</h5>
             <div class="card-body text-center">
                 <h5 class="card-title text-center">Crie, edite ou veja as enquentes criadas</h5>
-                <a href="#" class="btn btn-primary">Entrar</a>
+                <a href="{{ route('polls.index') }}" class="btn btn-primary">Entrar</a>
             </div>
         </div>
         <div class="card" style="margin-top: 20px">
             <h5 class="card-header text-center" style="background-color: #937DC2;color: #f8fafc">Usuários</h5>
             <div class="card-body text-center">
-                <h5 class="card-title text-center">Crie, edite ou veja as enquentes criadas</h5>
+                <h5 class="card-title text-center">Crie, edite ou veja os usuários criados</h5>
                 <a href="#" class="btn btn-primary">Entrar</a>
             </div>
         </div>

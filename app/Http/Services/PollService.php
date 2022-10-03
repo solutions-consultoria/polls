@@ -16,4 +16,16 @@ class PollService {
         $this->pollModel = $pollModel;
     }
 
+    public function index()
+    {
+        $polls = $this->pollModel->paginate(10);
+        return view('polls.index',compact('polls'));
+    }
+
+    public function create($request)
+    {
+        return 'oi';
+    }
+
+
 }
