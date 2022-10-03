@@ -23,4 +23,14 @@ class PollController extends Controller
     {
       return  $this->pollService->create($request);
     }
+
+    public function createPost(Request $request)
+    {
+      return  $this->pollService->createPost($request);
+    }
+
+    public function sendWpp($id)
+    {
+      return  $this->pollService->sendWpp($id);
+    }
 }

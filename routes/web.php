@@ -14,3 +14,5 @@ Route::get('/admin/home', function () {return  response()->view('admin.home');})
 
 Route::get('/polls', [PollController::class, 'index'])->name('polls.index')->middleware('isAuth');
 Route::get('/polls/create', [PollController::class, 'create'])->name('polls.create')->middleware('isAuth');
+Route::post('/polls/create', [PollController::class, 'createPost'])->name('polls.createPost')->middleware('isAuth');
+Route::get('/polls/{id}/sendWpp', [PollController::class, 'sendWpp'])->name('polls.sendWpp')->middleware('isAuth');

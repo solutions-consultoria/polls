@@ -20,7 +20,7 @@
                 <td>{{$s->created_at}}</td>
                 <td>
                     <a href="" class="btn btn-danger">Deletar  enquete</a><br>
-                    <a href="" class="btn btn-success">Mandar link WPP</a>
+                    <a href="{{route('polls.sendWpp',['id'=>$s->id])}}" class="btn btn-success">Mandar link WPP</a>
                 </td>
             </tr>
         </tbody>
