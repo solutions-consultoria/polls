@@ -26,7 +26,6 @@
 
                             <div class="col-md-6">
                                 <select class="form-control" id="selecthowquetions">
-                                    <option id="1question">1</option>
                                     <option id="2question">2</option>
                                     <option id="3question">3</option>
                                     <option id="4question">4</option>
@@ -40,11 +39,11 @@
                             <label class="col-md-4 col-form-label text-md-right">Digite as respostas</label>
 
                             <div class="col-md-6">
-                                 <input id="question1" name="question1" type="text" class="form-control" >
-                                 <input id="question2" name="question2" type="text" class="form-control" >
-                                 <input id="question3" name="question3" type="text" class="form-control" >
-                                 <input id="question4" name="question4" type="text" class="form-control" >
-                                 <input id="question5" name="question5" type="text" class="form-control" >
+                                 <input id="answer1" name="answer1" type="text" class="form-control" required>
+                                 <input id="answer2" name="answer2" type="text" class="form-control" required>
+                                 <input id="answer3" name="answer3" type="text" class="form-control" >
+                                 <input id="answer4" name="answer4" type="text" class="form-control" >
+                                 <input id="answer5" name="answer5" type="text" class="form-control" >
                             </div>
                         </div>
 
@@ -69,56 +68,44 @@
 
 
 $(document).ready(function() {
-  $('#question2').hide();
-  $('#question3').hide();
-  $('#question4').hide();
-  $('#question5').hide();
+  $('#answer3').hide();
+  $('#answer4').hide();
+  $('#answer5').hide();
 
   $('#selecthowquetions').change(function() {
-    if ($('#selecthowquetions').val() == '1') {
-      $('#question1').show();
-      $('#question2').hide();
-      $('#question3').hide();
-      $('#question4').hide();
-      $('#question5').hide();
-      $('#question2').val('');
-      $('#question3').val('');
-      $('#question4').val('');
-      $('#question5').val('');
-    }
     if ($('#selecthowquetions').val() == '2') {
-      $('#question1').show();
-      $('#question2').show();
-      $('#question3').hide();
-      $('#question4').hide();
-      $('#question5').hide();
-      $('#question3').val('');
-      $('#question4').val('');
-      $('#question5').val('');
+      $('#answer1').show();
+      $('#answer2').show();
+      $('#answer3').hide();
+      $('#answer4').hide();
+      $('#answer5').hide();
+      $('#answer3').val('');
+      $('#answer4').val('');
+      $('#answer5').val('');
     }
     if ($('#selecthowquetions').val() == '3') {
-      $('#question1').show();
-      $('#question2').show();
-      $('#question3').show();
-      $('#question4').hide();
-      $('#question5').hide();
-      $('#question4').val('');
-      $('#question5').val('');
+      $('#answer1').show();
+      $('#answer2').show();
+      $('#answer3').show();
+      $('#answer4').hide();
+      $('#answer5').hide();
+      $('#answer4').val('');
+      $('#answer5').val('');
     }
     if ($('#selecthowquetions').val() == '4') {
-      $('#question1').show();
-      $('#question2').show();
-      $('#question3').show();
-      $('#question4').show();
-      $('#question5').hide();
-      $('#question5').val('');
+      $('#answer1').show();
+      $('#answer2').show();
+      $('#answer3').show();
+      $('#answer4').show();
+      $('#answer5').hide();
+      $('#answer5').val('');
     }
     if ($('#selecthowquetions').val() == '5') {
-      $('#question1').show();
-      $('#question2').show();
-      $('#question3').show();
-      $('#question4').show();
-      $('#question5').show();
+      $('#answer1').show();
+      $('#answer2').show();
+      $('#answer3').show();
+      $('#answer4').show();
+      $('#answer5').show();
     }
   });
 });

@@ -16,3 +16,4 @@ Route::get('/polls', [PollController::class, 'index'])->name('polls.index')->mid
 Route::get('/polls/create', [PollController::class, 'create'])->name('polls.create')->middleware('isAuth');
 Route::post('/polls/create', [PollController::class, 'createPost'])->name('polls.createPost')->middleware('isAuth');
 Route::get('/polls/{id}/sendWpp', [PollController::class, 'sendWpp'])->name('polls.sendWpp')->middleware('isAuth');
+Route::delete('/polls/{id}', [PollController::class, 'delete'])->name('polls.delete')->middleware('isAuth');

@@ -29,6 +29,11 @@ class PollController extends Controller
       return  $this->pollService->createPost($request);
     }
 
+    public function delete($id)
+    {
+      return $this->pollService->delete($id);
+    }
+
     public function sendWpp($id)
     {
       return  $this->pollService->sendWpp($id);

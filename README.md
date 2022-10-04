@@ -9,3 +9,7 @@ Polls é uma aplicação para realizar enquetes e colher resultados de forma oti
 3- Após isso, rodar o comando 'php artisan serve' para subir o servidor.<br>
 4- Em caso de dúvidas quanto ao arquivo .env ou outras coisas, contatar o Jonny.<br>
 
+
+## Antes de abrir a aplicação
+1- Criar ROLES: 1(Usuário Padrão) e 99(Admin).<br>
+
