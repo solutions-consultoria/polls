@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->unsignedBigInteger('role')->nullable();
             $table->string('phone_number')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::table('users', function($table) {

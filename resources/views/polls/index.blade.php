@@ -25,7 +25,12 @@
                                 <td>{{$s->name}}</td>
                                 <td>{{$s->created_at}}</td>
                                 <td>
-                                    <a href="" class="btn btn-danger">Deletar  enquete</a><br>
+                                    <form method="post" action="{{route('polls.delete',['id'=>$s->id])}}"> 
+                                        <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button class="btn btn-danger" type="submit">Deletar  enquete</button>
+                                    </form>
+                                
                                     <a href="{{route('polls.sendWpp',['id'=>$s->id])}}" class="btn btn-success">Mandar link WPP</a>
                                 </td>
                             </tr>

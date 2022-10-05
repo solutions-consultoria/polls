@@ -23,7 +23,7 @@ class PollService {
 
     public function index()
     {
-        $polls = $this->pollModel->paginate(10);
+        $polls = $this->pollModel->whereNull('deleted_at')->paginate(10);
         return view('polls.index',compact('polls'));
     }
 
@@ -53,7 +53,7 @@ class PollService {
         if (!is_null($request->answer5)) $this->receiveAnswersAndTryCreate($pollId, $request->answer5);
            
         flash('A enquete foi criada com sucesso');
-        return redirect()->route('polls.create');
+        return redirect()->route('polls.index');
 
     }
 
@@ -84,6 +84,13 @@ class PollService {
 
     public function delete ($id)
     {
+       
+        if ($this->pollModel->where('id', $id)->delete() && $this->answerModel->where('poll_id', $id)->delete()) {
+            flash('Enquete deletada com sucesso');
+            return redirect()->route('polls.index');
+        }
+            flash('Enquete deletada não foi deletada');
+            return redirect()->route('polls.index');
         
     }
 

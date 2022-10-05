@@ -18,6 +18,7 @@ class CreateAnswersTable extends Migration
             $table->string('name');
             $table->unsignedBigInteger('poll_id')->nullable();
             $table->timestamps();
+            $table->softDeletes();
 
         });
 

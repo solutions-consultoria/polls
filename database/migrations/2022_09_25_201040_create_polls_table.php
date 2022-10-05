@@ -18,6 +18,7 @@ class CreatePollsTable extends Migration
             $table->string('name');
             $table->longText('qr_code_base_64')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
